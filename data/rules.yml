@@ -1,0 +1,30 @@
+version: "3.1"
+
+rules:
+
+  - rule: Apply for loan eligibility
+    steps:
+      - intent: apply_for_loan
+      - action: loan_eligibility_form
+      - active_loop: loan_eligibility_form
+      - slot_was_set:
+          - gender: "male"
+          - married: "married"
+          - dependents: "2"
+          - education: "graduate"
+          - self_employed: "yes"
+          - property_area: "urban"
+          - income: "50000"
+          - score: "750"
+      - active_loop: null
+      - action: action_loan_eligibility
+
+  - rule: Classify a message as spam
+    steps:
+      - intent: classify_message
+      - action: action_classify_message
+
+  - rule: User asks a query about loans
+    steps:
+      - intent: query
+      - action: action_chatgpt_faq

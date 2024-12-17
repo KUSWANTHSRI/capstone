@@ -1,0 +1,191 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - name
+  - email
+  - classify_message
+  - query
+  - salary
+  - credit_score
+  - apply_for_loan
+  - provide_personal_info
+
+entities:
+  - name
+  - email
+  - gender
+  - married
+  - dependents
+  - education
+  - self_employed
+  - property_area
+  - income
+  - score
+slots:
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: name
+
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: email
+
+  gender:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: gender
+
+  married:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: married
+
+  dependents:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: dependents
+
+  education:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: education
+
+  self_employed:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: self_employed
+
+  property_area:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: property_area
+
+  income:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: income
+
+  score:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: score
+forms:
+  loan_eligibility_form:
+    required_slots:
+      - gender
+      - married
+      - education
+      - self_employed
+      - property_area
+      - income
+      - score
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  utter_ask_name:
+  
+  - text: "Hi there! What's your name?"
+  - text: "Could you please tell me your name?"
+
+  utter_ask_email:
+  - text: "Please provide your mail id."
+  - text: "Could you share your mail id  with me?"
+
+  utter_ask_gender:
+  - text: "What is your gender? (e.g., male, female, other)"
+
+  - text: "Can you tell me your gender?"
+  - text: "Please let me know your gender."
+
+  utter_ask_married:
+  - text: "What is your marital status? (e.g., married, single)"
+
+  - text: "Are you married? Please share your marital status."
+  - text: "Could you tell me if you're married?"
+
+  utter_ask_dependents:
+  
+  - text: "How many dependents do you have?"
+  - text: "Can you share how many dependents you have?"
+
+  utter_ask_education:
+  - text: "What is your highest level of education? (e.g., graduate, ungraduate)"
+  - text: "What is your highest level of education?"
+  - text: "Can you tell me about your education?"
+
+  utter_ask_self_employed:
+  - text: "Are you self-employed? (yes or no)"
+
+  - text: "Are you self-employed? Please confirm."
+  - text: "Could you let me know if you’re self-employed?"
+
+  utter_ask_property_area:
+  
+  - text: "What type of area do you live in? (Urban, Semiurban, Rural)"
+  - text: "Can you tell me the type of area you live in?"
+
+  utter_ask_income:
+  - text: "What is your monthly income?"
+  - text: "Please provide your monthly income."
+  - text: "Could you share your income details?"
+
+  utter_ask_score:
+  
+  - text: "What is your credit score?"
+  - text: "Can you share your credit score with me?"
+
+actions:
+  - action_chatgpt_faq
+  - action_classify_message
+  - action_loan_eligibility
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,61 @@
+version: "3.1"
+
+stories:
+
+- story: greet and get details 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: name
+  - action: utter_ask_name
+  - intent: email
+  - action: utter_ask_email
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: Apply for loan eligibility
+  steps:
+    - intent: apply_for_loan
+    - action: loan_eligibility_form
+    - active_loop: loan_eligibility_form
+    - slot_was_set:
+        - gender: "male"
+        - married: "married"
+        - dependents: "2"
+        - education: "graduate"
+        - self_employed: "yes"
+        - property_area: "urban"
+        - income: "50000"
+        - score: "750"
+    - active_loop: null
+    - action: action_loan_eligibility
+
+- story: Classify a message as spam
+  steps:
+    - intent: classify_message
+    - action: action_classify_message
+
+
+
+- story: User asks a query about loans
+  steps:
+    - intent: query
+    - action: action_chatgpt_faq

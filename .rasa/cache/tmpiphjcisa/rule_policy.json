@@ -1,0 +1,23 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"query\"}}]": "action_chatgpt_faq",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"query\"}}, {\"prev_action\": {\"action_name\": \"action_chatgpt_faq\"}, \"user\": {\"intent\": \"query\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"apply_for_loan\"}}]": "loan_eligibility_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"apply_for_loan\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"loan_eligibility_form\"}, \"slots\": {\"dependents\": [1.0], \"education\": [1.0], \"gender\": [1.0], \"income\": [1.0], \"married\": [1.0], \"property_area\": [1.0], \"score\": [1.0], \"self_employed\": [1.0]}, \"user\": {\"intent\": \"apply_for_loan\"}}]": "action_loan_eligibility",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"apply_for_loan\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"loan_eligibility_form\"}, \"slots\": {\"dependents\": [1.0], \"education\": [1.0], \"gender\": [1.0], \"income\": [1.0], \"married\": [1.0], \"property_area\": [1.0], \"score\": [1.0], \"self_employed\": [1.0]}, \"user\": {\"intent\": \"apply_for_loan\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_loan_eligibility\"}, \"slots\": {\"dependents\": [1.0], \"education\": [1.0], \"gender\": [1.0], \"income\": [1.0], \"married\": [1.0], \"property_area\": [1.0], \"score\": [1.0], \"self_employed\": [1.0]}, \"user\": {\"intent\": \"apply_for_loan\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"classify_message\"}}]": "action_classify_message",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"classify_message\"}}, {\"prev_action\": {\"action_name\": \"action_classify_message\"}, \"user\": {\"intent\": \"classify_message\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent restart",
+      "predicting default action with intent back",
+      "handling active loops and forms - loan_eligibility_form",
+      "handling active loops and forms - loan_eligibility_form - action_listen",
+      "predicting default action with intent session_start"
+    ]
+  }
+}

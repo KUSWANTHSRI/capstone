@@ -1,0 +1,169 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent : name
+  examples: |
+   - my name is kuswanth
+   - u can call sai 
+   - myself vijay 
+   - i am posa
+- intent : email
+  examples: |
+   - abcdde@gamil.com
+   - vinay@gmail.com
+   - sai@gmail.com
+   - posa@gmail.com
+
+- intent: classify_message
+  examples: |
+    - Is this message spam: "Congratulations! You've won $1,000. Click here to claim."
+    - Can you check if this message is spam: "Your loan is approved. Please call us now."
+    - Is this text spam or legitimate: "Dear user, update your bank details immediately."
+    - Tell me if this message is spam: "Buy now and get 50% off on all products!"
+- intent: query
+  examples: |
+   - I have a query about my account.
+   - Can you tell me how to block my card?
+   - I need help with creating a new account.
+   - I have a question about loans.
+   - How can I block my card?
+   - What are the bank timings?
+- intent: salary
+  examples: |
+   - [20000](income)
+   - my salary is [150000](income)
+   - my income [80000](income)
+   - my annual income is [8000](income)
+- intent: credit_score
+  examples: |
+   - Is a credit score of [credit 750](score) good enough for a personal loan?
+   - Can I get a car loan with a score of [credit 650](score)?
+   - What does a score of [credit 580](score) mean for loan eligibility?
+   - Do I need a credit score above [credit 700](score) to qualify for a home loan?
+   - My credit score is [credit 620](score). Can I still apply for a loan?
+   - Can I improve my score from [credit 600](score) to [700](score) to get better terms?
+   - Is a credit score under [credit 500](score) considered bad?
+   - Does a score of [credit 800](score) give me the best loan rates?
+   - What credit score should I aim for, like [credit 720](score) or higher?
+   - My current score is [credit 680](score). Is that good for a mortgage?
+- intent: apply_for_loan
+
+  examples: |
+   - loan eligibility
+   -  i want to know loan eligbility
+   - am i eligbile for loan
+   - how to know whether i am eligbile for loan
+   - i want to apply for loan
+  
+
+- intent: provide_personal_info
+
+  examples: |
+    - My name is [John Doe](name) and my mobile number is [9876543210](mobile).
+    - I am [married](married) with [2 dependents](dependents) dependents.
+    - My name is [Alice Smith](name), and I am [single](married).
+    - My phone number is [9876501234](mobile).
+    - I am a [graduate](education) and [yes](self_employed).
+    - I am [female](gender) and currently living in a [rural](property_area) area.
+    - My name is [Rahul Kumar](name), and my mobile number is [9988776655](mobile).
+    - I am [male](gender), [married](married), and have [1 dependents](dependents) dependent.
+    - I am [no](self_employed) and live in an [urban](property_area) area.
+    - My name is [Priya Sharma](name). I am a [postgraduate](education) and [unmarried](married).
+    - My mobile number is [9123456789](mobile), and I live in a [semi-urban](property_area) area.
+    - My name is [Amrita Singh](name), and I have [3 dependents](dependents) dependents.
+    - I am [yes](self_employed) and live in a [rural](property_area) area.
+    - I am [male](gender), a [graduate](education), and live in an [urban](property_area) area.
+    - I have no dependents, and I live in a [semi-urban](property_area) area.
+    - My name is [Vikram Patel](name), and I am [married](married) with [2 dependents](dependents) dependents.
+    - My phone number is [9871234567](mobile). I am [female](gender) and [no](self_employed).
+    - I am [unmarried](married), a [graduate](education), and currently live in a [rural](property_area) area.
+    - My name is [Rohan Verma](name), and I live in an [urban](property_area) area with [1 dependents](dependents) dependent.
+
